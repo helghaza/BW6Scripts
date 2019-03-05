@@ -1,0 +1,16 @@
+LOG:  database system was shut down at 2019-01-21 09:46:29 CET
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  column "domainhome" of relation "domain" already exists
+STATEMENT:  ALTER TABLE domain ADD COLUMN domainHome varchar(1000) DEFAULT NULL
+ERROR:  current transaction is aborted, commands ignored until end of transaction block
+STATEMENT:  ALTER TABLE ActivityLoggingStats ADD COLUMN activityInput text DEFAULT NULL
+ERROR:  column "domainhome" of relation "domain" already exists
+STATEMENT:  ALTER TABLE domain ADD COLUMN domainHome varchar(1000) DEFAULT NULL
+ERROR:  current transaction is aborted, commands ignored until end of transaction block
+STATEMENT:  ALTER TABLE ActivityLoggingStats ADD COLUMN activityInput text DEFAULT NULL
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down

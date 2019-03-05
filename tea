@@ -1,0 +1,98 @@
+#!/bin/bash
+
+# chkconfig: 3 90 20
+# description: Startup/Shutdown TIBCO TEA
+function log() {
+	# Text color variables
+	txtund=$(tput sgr 0 1)          # Underline
+	txtbld=$(tput bold)             # Bold
+	bldred=${txtbld}$(tput setaf 1) #  red
+	bldylw=${txtbld}$(tput setaf 3) #  red
+	bldblu=${txtbld}$(tput setaf 2) #  blue
+	bldwht=${txtbld}$(tput setaf 7) #  white
+	txtrst=$(tput sgr0)             # Reset
+	info=${bldwht}*${txtrst}        # Feedback
+	pass=${bldblu}*${txtrst}
+	warn=${bldred}*${txtrst}
+	ques=${bldblu}?${txtrst}
+
+
+case "$1" in
+ 	INFO)
+		echo -e "$bldwht$2$txtrst"
+	;;
+	ERROR)
+		echo -e "$bldred$2$txtrst"
+	;;
+	WARN)
+		echo -ne "$bldylw$2$txtrst"
+	;;
+	SUCCESS)
+		echo -e "$bldblu$2$txtrst"
+	;;
+	*)
+		echo -e "$bldwht$2$txtrst"
+	;;
+esac
+}
+
+error() { log ERROR "$1"; }
+warn() { log WARN "$1"; }
+success() { log SUCCESS "$1"; }
+inf() { log INFO "$1"; } # "info" is already a command
+
+# Set environment variables
+
+export DIR="$( cd "$( dirname "$0" )" && pwd )"
+export TIBCO_HOME=/opt/tibco/home/BW642
+export TEA_HOME=$TIBCO_HOME/tea/2.3
+export LOGFILE=$DIR/logs/tibco-tea_out.log
+
+
+case "$1" in
+ 	start)
+		inf "Starting TIBCO TEA Agent"
+			cd $TEA_HOME/bin/
+		    $TEA_HOME/bin/tea > $LOGFILE 2>&1 &
+            cd -
+		    echo -ne '#####                     (33%)\r'
+		    sleep 2
+		    echo -ne '#############             (66%)\r'
+		    sleep 2
+		    echo -ne '#######################   (100%)\r'
+		    echo -ne '\n'
+		    $0 status	
+		;;
+ 	stop)
+        inf "Stopping TIBCO TEA Agent"
+	    tea_pid=`ps -ef | grep "tea --innerProcess" | grep -v "grep"  | awk '{print $2}'`
+		if [ -z $tea_pid ]
+	    	then
+			error "No TEA pid found. Nothing to stop... "
+	    	exit 1
+	    	fi
+		kill $tea_pid >> $LOGFILE 2>&1
+		error "TIBCO TEAAgent - stopped ! (PID: $tea_pid)."
+		;;
+	status)
+        inf "Status of TIBCO TEA Agent"
+        tea_pid=`ps -ef | grep "tea --innerProcess" | grep -v "grep"  | awk '{print $2}'`
+		if [ -z $tea_pid ]
+	    	then
+			error "\t ❌ TIBCO TEA Agent is stopped."
+		else
+			success "\t ✅ TIBCO TEA Agent is started (PID: $tea_pid)."
+	    	fi
+		;;
+	restart)
+		$0 stop
+        sleep 2
+   		$0 start
+	  	;;
+  *)
+		inf "Usage: $0 {start|stop|restart|status}"
+		exit 1
+		;;
+esac
+exit 0
+																  

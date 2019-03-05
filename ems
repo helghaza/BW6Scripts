@@ -1,0 +1,98 @@
+#!/bin/bash
+
+# chkconfig: 3 90 20
+# description: Startup/Shutdown TIBCO EMS
+function log() {
+	# Text color variables
+	txtund=$(tput sgr 0 1)          # Underline
+	txtbld=$(tput bold)             # Bold
+	bldred=${txtbld}$(tput setaf 1) #  red
+	bldylw=${txtbld}$(tput setaf 3) #  red
+	bldblu=${txtbld}$(tput setaf 2) #  blue
+	bldwht=${txtbld}$(tput setaf 7) #  white
+	txtrst=$(tput sgr0)             # Reset
+	info=${bldwht}*${txtrst}        # Feedback
+	pass=${bldblu}*${txtrst}
+	warn=${bldred}*${txtrst}
+	ques=${bldblu}?${txtrst}
+
+
+case "$1" in
+ 	INFO)
+		echo -e "$bldwht$2$txtrst"
+	;;
+	ERROR)
+		echo -e "$bldred$2$txtrst"
+	;;
+	WARN)
+		echo -ne "$bldylw$2$txtrst"
+	;;
+	SUCCESS)
+		echo -e "$bldblu$2$txtrst"
+	;;
+	*)
+		echo -e "$bldwht$2$txtrst"
+	;;
+esac
+}
+
+error() { log ERROR "$1"; }
+warn() { log WARN "$1"; }
+success() { log SUCCESS "$1"; }
+inf() { log INFO "$1"; } # "info" is already a command
+
+# Set environment variables
+export DIR="$( cd "$( dirname "$0" )" && pwd )"
+export TIBCO_HOME=/opt/tibco/EMS840
+export EMS_HOME=$TIBCO_HOME/ems/8.4
+export LOGFILE=$DIR/logs/tibco-ems_out.log
+
+
+
+case "$1" in
+ 	start)
+		inf "Starting TIBCO EMS Instance"
+			cd $EMS_HOME/bin/
+		    $EMS_HOME/bin/tibemsd64 > $LOGFILE 2>&1 &
+            cd -
+		    echo -ne '#####                     (33%)\r'
+		    sleep 2
+		    echo -ne '#############             (66%)\r'
+		    sleep 2
+		    echo -ne '#######################   (100%)\r'
+		    echo -ne '\n'
+		    $0 status	
+		;;
+ 	stop)
+        inf "Stopping TIBCO EMS Instance"
+	    ems_pid=`pidof tibemsd`
+		if [ -z $ems_pid ]
+		then
+			error "No EMS pid found. Nothing to stop... "
+			exit 1
+		fi
+		kill $ems_pid >> $LOGFILE 2>&1
+		error "TIBCO EMSAgent - stopped ! (PID: $ems_pid)."
+		;;
+	status)
+        inf "Status of TIBCO EMS Instance"
+        ems_pid=`pidof tibemsd`
+		if [ -z $ems_pid ]
+	    	then
+			error "\t ❌ TIBCO EMS Agent is stopped ☠️"
+		else
+			success "\t ✅ TIBCO EMS Agent is started (PID: $ems_pid)"
+	    	fi
+		;;
+	restart)
+		$0 stop
+        sleep 2
+   		$0 start
+	  	;;
+  *)
+		inf "Usage: $0 {start|stop|restart|status}"
+		exit 1
+		;;
+esac
+exit 0
+																  

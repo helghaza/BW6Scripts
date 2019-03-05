@@ -1,0 +1,9 @@
+TIBCO Enterprise Administrator v2.3.0-HF2 (pid: 23888)
+Reading configuration from file /opt/tibco/config/BW642/tibco/cfgmgmt/tea/conf/tea.conf
+Writing server logs in /opt/tibco/config/BW642/tibco/cfgmgmt/tea/logs
+Initializing datastore /opt/tibco/config/BW642/tibco/cfgmgmt/tea/data
+Store Manager Started
+Server started
+Web Server Started at http://macbookhicham.home:8777/
+Server is stopping...
+Server is stopped (uptime: 0h 1m 25s 854ms)

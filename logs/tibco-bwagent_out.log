@@ -1,0 +1,30 @@
+TIBCO ActiveMatrix BusinessWorks version 6.5.0, build V63, 2018-08-08
+09:07:10.961 WARN  [main] o.e.j.s.handler.RequestLogHandler - !RequestLog
+TIBCO-BW-AGENT-300002: BusinessWorks Agent started successfully.
+09:08:32.624 WARN  [pool-2-thread-1] o.eclipse.jetty.client.HttpExchange - CONNECTION FAILED ContentExchangeWrapper@59ce4d17=PUT//macbookhicham.home:8777/teaa/task#CONNECTING(1ms)->EXCEPTED(0ms)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_144]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_144]
+	at sun.nio.ch.SocketAdaptor.connect(SocketAdaptor.java:111) ~[na:1.8.0_144]
+	at org.eclipse.jetty.client.SelectConnector.startConnection(SelectConnector.java:79) ~[jetty-client-8.1.16.v20140903.jar:8.1.16.v20140903]
+	at org.eclipse.jetty.client.HttpDestination.startNewConnection(HttpDestination.java:292) [jetty-client-8.1.16.v20140903.jar:8.1.16.v20140903]
+	at org.eclipse.jetty.client.HttpDestination.doSend(HttpDestination.java:597) [jetty-client-8.1.16.v20140903.jar:8.1.16.v20140903]
+	at org.eclipse.jetty.client.HttpDestination.send(HttpDestination.java:532) [jetty-client-8.1.16.v20140903.jar:8.1.16.v20140903]
+	at org.eclipse.jetty.client.HttpClient.send(HttpClient.java:180) [jetty-client-8.1.16.v20140903.jar:8.1.16.v20140903]
+	at com.tibco.tea.agent.internal.server.BaseTeaAgentServer.autoRegisterAgent(BaseTeaAgentServer.java:545) [agent-2.1.0-HF2.jar:2.1.0-HF2]
+	at com.tibco.tea.agent.server.TeaAgentServer.autoRegisterAgent(TeaAgentServer.java:560) [agent-2.1.0-HF2.jar:2.1.0-HF2]
+	at com.tibco.tea.agent.internal.server.BaseTeaAgentServer.autoRegisterAgent(BaseTeaAgentServer.java:497) [agent-2.1.0-HF2.jar:2.1.0-HF2]
+	at com.tibco.tea.agent.server.TeaAgentServer.registerAgentAutoRegisterListener(TeaAgentServer.java:540) [agent-2.1.0-HF2.jar:2.1.0-HF2]
+	at com.tibco.bw.tea.agent.BWTeaAgentLauncher$BWTEAAgentRegistrator.registerTEAAgent(BWTeaAgentLauncher.java:687) [com.tibco.bw.thor.admin.tea.agent_1.4.900.061.jar:na]
+	at com.tibco.bw.thor.admin.agent.transport.BWBaseGroupListener.doNewLeaderWork(BWBaseGroupListener.java:227) [com.tibco.bw.thor.admin.agent_1.4.900.061.jar:na]
+	at com.tibco.bw.thor.admin.agent.transport.BWBaseGroupListener.access$0(BWBaseGroupListener.java:144) [com.tibco.bw.thor.admin.agent_1.4.900.061.jar:na]
+	at com.tibco.bw.thor.admin.agent.transport.BWBaseGroupListener$NewLeaderWorkerThread.run(BWBaseGroupListener.java:300) [com.tibco.bw.thor.admin.agent_1.4.900.061.jar:na]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_144]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_144]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_144]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_144]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_144]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_144]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_144]
+09:08:32.626 ERROR [pool-2-thread-1] com.tibco.tea.agent - Auto registration failed with error: STATUS_EXCEPTED. There may be a problem with SSL configuration. For example, if HTTP Server in TEA Server was configured for mutual authentication; then the HTTP Client on TEA Agent side must be configured with a proper keystore/truststore; with correct client certificate file imported. For more details, please refer the user guide.
+09:08:32.975 ERROR [UDPMonitorListener] c.t.b.t.m.t.m.udp.UDPMonitorListener - Socket closed
