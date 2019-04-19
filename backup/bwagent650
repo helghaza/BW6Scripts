@@ -44,7 +44,7 @@ inf() { log INFO "$1"; } # "info" is already a command
 
 # Set environment variables
 export DIR="$( cd "$( dirname "$0" )" && pwd )"
-export TIBCO_HOME=/opt/tibco/home/BW651
+export TIBCO_HOME=/opt/tibco/home/BW650
 export BW_HOME=$TIBCO_HOME/bw/6.5
 export LOGFILE=$DIR/logs/tibco-bwagent_out.log
 

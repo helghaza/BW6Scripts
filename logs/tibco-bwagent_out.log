@@ -1,30 +1,322 @@
-TIBCO ActiveMatrix BusinessWorks version 6.5.0, build V63, 2018-08-08
-09:07:10.961 WARN  [main] o.e.j.s.handler.RequestLogHandler - !RequestLog
+TIBCO ActiveMatrix BusinessWorks version 6.5.1, build V9, 2019-02-06
+00:09:10.029 WARN  [main] org.eclipse.jetty.server.Server - ErrorPageMapper not supported for Server level Error Handling
 TIBCO-BW-AGENT-300002: BusinessWorks Agent started successfully.
-09:08:32.624 WARN  [pool-2-thread-1] o.eclipse.jetty.client.HttpExchange - CONNECTION FAILED ContentExchangeWrapper@59ce4d17=PUT//macbookhicham.home:8777/teaa/task#CONNECTING(1ms)->EXCEPTED(0ms)
-java.net.ConnectException: Connection refused
-	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_144]
-	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_144]
-	at sun.nio.ch.SocketAdaptor.connect(SocketAdaptor.java:111) ~[na:1.8.0_144]
-	at org.eclipse.jetty.client.SelectConnector.startConnection(SelectConnector.java:79) ~[jetty-client-8.1.16.v20140903.jar:8.1.16.v20140903]
-	at org.eclipse.jetty.client.HttpDestination.startNewConnection(HttpDestination.java:292) [jetty-client-8.1.16.v20140903.jar:8.1.16.v20140903]
-	at org.eclipse.jetty.client.HttpDestination.doSend(HttpDestination.java:597) [jetty-client-8.1.16.v20140903.jar:8.1.16.v20140903]
-	at org.eclipse.jetty.client.HttpDestination.send(HttpDestination.java:532) [jetty-client-8.1.16.v20140903.jar:8.1.16.v20140903]
-	at org.eclipse.jetty.client.HttpClient.send(HttpClient.java:180) [jetty-client-8.1.16.v20140903.jar:8.1.16.v20140903]
-	at com.tibco.tea.agent.internal.server.BaseTeaAgentServer.autoRegisterAgent(BaseTeaAgentServer.java:545) [agent-2.1.0-HF2.jar:2.1.0-HF2]
-	at com.tibco.tea.agent.server.TeaAgentServer.autoRegisterAgent(TeaAgentServer.java:560) [agent-2.1.0-HF2.jar:2.1.0-HF2]
-	at com.tibco.tea.agent.internal.server.BaseTeaAgentServer.autoRegisterAgent(BaseTeaAgentServer.java:497) [agent-2.1.0-HF2.jar:2.1.0-HF2]
-	at com.tibco.tea.agent.server.TeaAgentServer.registerAgentAutoRegisterListener(TeaAgentServer.java:540) [agent-2.1.0-HF2.jar:2.1.0-HF2]
-	at com.tibco.bw.tea.agent.BWTeaAgentLauncher$BWTEAAgentRegistrator.registerTEAAgent(BWTeaAgentLauncher.java:687) [com.tibco.bw.thor.admin.tea.agent_1.4.900.061.jar:na]
-	at com.tibco.bw.thor.admin.agent.transport.BWBaseGroupListener.doNewLeaderWork(BWBaseGroupListener.java:227) [com.tibco.bw.thor.admin.agent_1.4.900.061.jar:na]
-	at com.tibco.bw.thor.admin.agent.transport.BWBaseGroupListener.access$0(BWBaseGroupListener.java:144) [com.tibco.bw.thor.admin.agent_1.4.900.061.jar:na]
-	at com.tibco.bw.thor.admin.agent.transport.BWBaseGroupListener$NewLeaderWorkerThread.run(BWBaseGroupListener.java:300) [com.tibco.bw.thor.admin.agent_1.4.900.061.jar:na]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_144]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_144]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_144]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_144]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_144]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_144]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_144]
-09:08:32.626 ERROR [pool-2-thread-1] com.tibco.tea.agent - Auto registration failed with error: STATUS_EXCEPTED. There may be a problem with SSL configuration. For example, if HTTP Server in TEA Server was configured for mutual authentication; then the HTTP Client on TEA Agent side must be configured with a proper keystore/truststore; with correct client certificate file imported. For more details, please refer the user guide.
-09:08:32.975 ERROR [UDPMonitorListener] c.t.b.t.m.t.m.udp.UDPMonitorListener - Socket closed
+00:09:46.396 ERROR [qtp1241128308-54] com.tibco.tea.agent - Exception occurred on invoking method 'public com.tibco.tea.agent.internal.task.TaskManager$TypedExcecutionResponse com.tibco.tea.agent.internal.task.TaskManager.executeTask(java.lang.String,java.util.Map) throws java.lang.Throwable'
+com.tibco.tea.agent.support.TeaException: Failed to start AppSpace
+	at com.tibco.bw.tea.object.BWAppSpaces.start(BWAppSpaces.java:1145) ~[com.tibco.bw.thor.admin.tea.agent_1.4.1000.005.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at com.tibco.tea.agent.internal.RequestTarget.doInvoke(RequestTarget.java:173) ~[agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.RequestTarget.invoke(RequestTarget.java:104) ~[agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.task.TaskManager.executeTask(TaskManager.java:102) ~[agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.RequestTargetForTaskManager.invoke(RequestTargetForTaskManager.java:46) ~[agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.RequestTarget.getResult(RequestTarget.java:472) ~[agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.server.BaseTeaAgentServer.processRequest(BaseTeaAgentServer.java:306) [agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.server.BaseTeaAgentServer.processRequest(BaseTeaAgentServer.java:220) [agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.server.TeaAgentServer$AgentHandler.handle(TeaAgentServer.java:627) [agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132) [jetty-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.websocket.server.WebSocketHandler.handle(WebSocketHandler.java:116) [websocket-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132) [jetty-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.server.Server.handle(Server.java:530) [jetty-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:347) [jetty-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:256) [jetty-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:247) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:140) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:382) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:708) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:626) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+Caused by: com.tibco.neo.exception.BaseException: TIBCO-BW-ADMIN-500210: AppSpace [appSpace] in Domain [domain] did not start completely, status is Stopped.
+	at com.tibco.bw.thor.management.domain.utils.AppSpaceLifecycleCommand.startappspace(AppSpaceLifecycleCommand.java:996) ~[com.tibco.bw.thor.management.domain_1.4.1000.008.jar:na]
+	at com.tibco.bw.thor.management.data.providers.AppSpaceProvider.startAppSpace(AppSpaceProvider.java:212) ~[com.tibco.bw.thor.management.domain_1.4.1000.008.jar:na]
+	at com.tibco.bw.tea.object.BWAppSpaces.start(BWAppSpaces.java:1126) ~[com.tibco.bw.thor.admin.tea.agent_1.4.1000.005.jar:na]
+	... 28 common frames omitted
+01:01:07.521 ERROR [qtp1241128308-68] c.t.b.t.m.p.rdbms.BWRDBMSDataManager - handling error in operation [getAllExecutedCommands]
+01:01:07.523 ERROR [qtp1241128308-68] c.t.b.t.m.p.rdbms.BWRDBMSDataManager - Exception details
+java.text.ParseException: Unparseable date: "Wed Apr 10 15:59:28 CEST 2019"
+	at java.text.DateFormat.parse(DateFormat.java:366) ~[na:1.8.0_192]
+	at com.tibco.bw.thor.management.persistence.rdbms.BWRDBMSDataManager.getCommandHistoryRecords(BWRDBMSDataManager.java:7416) ~[com.tibco.bw.thor.management.persistence_1.4.1000.008.jar:na]
+	at com.tibco.bw.thor.management.data.providers.AgentProvider.getCommandHistory(AgentProvider.java:369) [com.tibco.bw.thor.management.domain_1.4.1000.008.jar:na]
+	at com.tibco.bw.tea.object.BWApplications.getCommandHistory(BWApplications.java:4293) [com.tibco.bw.thor.admin.tea.agent_1.4.1000.005.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at com.tibco.tea.agent.internal.RequestTarget.doInvoke(RequestTarget.java:173) [agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.RequestTarget.invoke(RequestTarget.java:104) [agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.task.TaskManager.executeTask(TaskManager.java:102) [agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.RequestTargetForTaskManager.invoke(RequestTargetForTaskManager.java:46) [agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.RequestTarget.getResult(RequestTarget.java:472) [agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.server.BaseTeaAgentServer.processRequest(BaseTeaAgentServer.java:306) [agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.server.BaseTeaAgentServer.processRequest(BaseTeaAgentServer.java:220) [agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.server.TeaAgentServer$AgentHandler.handle(TeaAgentServer.java:627) [agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132) [jetty-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.websocket.server.WebSocketHandler.handle(WebSocketHandler.java:116) [websocket-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132) [jetty-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.server.Server.handle(Server.java:530) [jetty-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:347) [jetty-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:256) [jetty-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:247) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:140) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:382) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:708) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:626) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+WARNING: exception with message ***getAllExecutedCommands failed
+	at com.tibco.bw.thor.management.persistence.rdbms.BWRDBMSDataManager.handleError(BWRDBMSDataManager.java:261)
+	at com.tibco.bw.thor.management.persistence.rdbms.BWRDBMSDataManager.getCommandHistoryRecords(BWRDBMSDataManager.java:7425)
+	at com.tibco.bw.thor.management.data.providers.AgentProvider.getCommandHistory(AgentProvider.java:369)
+	at com.tibco.bw.tea.object.BWApplications.getCommandHistory(BWApplications.java:4293)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.tibco.tea.agent.internal.RequestTarget.doInvoke(RequestTarget.java:173)
+	at com.tibco.tea.agent.internal.RequestTarget.invoke(RequestTarget.java:104)
+	at com.tibco.tea.agent.internal.task.TaskManager.executeTask(TaskManager.java:102)
+	at com.tibco.tea.agent.internal.RequestTargetForTaskManager.invoke(RequestTargetForTaskManager.java:46)
+	at com.tibco.tea.agent.internal.RequestTarget.getResult(RequestTarget.java:472)
+	at com.tibco.tea.agent.internal.server.BaseTeaAgentServer.processRequest(BaseTeaAgentServer.java:306)
+	at com.tibco.tea.agent.internal.server.BaseTeaAgentServer.processRequest(BaseTeaAgentServer.java:220)
+	at com.tibco.tea.agent.server.TeaAgentServer$AgentHandler.handle(TeaAgentServer.java:627)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.eclipse.jetty.websocket.server.WebSocketHandler.handle(WebSocketHandler.java:116)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.eclipse.jetty.server.Server.handle(Server.java:530)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:347)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:256)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:247)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:140)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:382)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:708)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:626)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.text.ParseException: Unparseable date: "Wed Apr 10 15:59:28 CEST 2019"
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.tibco.bw.thor.management.persistence.rdbms.BWRDBMSDataManager.getCommandHistoryRecords(BWRDBMSDataManager.java:7416)
+	... 30 more
+01:01:07.527 ERROR [qtp1241128308-68] com.tibco.tea.agent - Exception occurred on invoking method 'public com.tibco.tea.agent.internal.task.TaskManager$TypedExcecutionResponse com.tibco.tea.agent.internal.task.TaskManager.executeTask(java.lang.String,java.util.Map) throws java.lang.Throwable'
+com.tibco.tea.agent.support.TeaException: TIBCO-BW-TEAAGENT-500517: Failed to get the command history.
+	at com.tibco.bw.tea.object.BWApplications.getCommandHistory(BWApplications.java:4309) ~[com.tibco.bw.thor.admin.tea.agent_1.4.1000.005.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at com.tibco.tea.agent.internal.RequestTarget.doInvoke(RequestTarget.java:173) ~[agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.RequestTarget.invoke(RequestTarget.java:104) ~[agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.task.TaskManager.executeTask(TaskManager.java:102) ~[agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.RequestTargetForTaskManager.invoke(RequestTargetForTaskManager.java:46) ~[agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.RequestTarget.getResult(RequestTarget.java:472) ~[agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.server.BaseTeaAgentServer.processRequest(BaseTeaAgentServer.java:306) [agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.internal.server.BaseTeaAgentServer.processRequest(BaseTeaAgentServer.java:220) [agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at com.tibco.tea.agent.server.TeaAgentServer$AgentHandler.handle(TeaAgentServer.java:627) [agent-2.3.0-HF5.jar:2.3.0-HF5]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132) [jetty-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.websocket.server.WebSocketHandler.handle(WebSocketHandler.java:116) [websocket-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132) [jetty-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.server.Server.handle(Server.java:530) [jetty-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:347) [jetty-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:256) [jetty-server-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:247) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:140) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:382) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:708) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:626) [jetty-util-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+Caused by: com.tibco.neo.exception.BaseException: WARNING: exception with message ***getAllExecutedCommands failed
+	at com.tibco.bw.thor.management.persistence.rdbms.BWRDBMSDataManager.handleError(BWRDBMSDataManager.java:261) ~[com.tibco.bw.thor.management.persistence_1.4.1000.008.jar:na]
+	at com.tibco.bw.thor.management.persistence.rdbms.BWRDBMSDataManager.getCommandHistoryRecords(BWRDBMSDataManager.java:7425) ~[com.tibco.bw.thor.management.persistence_1.4.1000.008.jar:na]
+	at com.tibco.bw.thor.management.data.providers.AgentProvider.getCommandHistory(AgentProvider.java:369) ~[com.tibco.bw.thor.management.domain_1.4.1000.008.jar:na]
+	at com.tibco.bw.tea.object.BWApplications.getCommandHistory(BWApplications.java:4293) ~[com.tibco.bw.thor.admin.tea.agent_1.4.1000.005.jar:na]
+	... 28 common frames omitted
+Caused by: java.text.ParseException: Unparseable date: "Wed Apr 10 15:59:28 CEST 2019"
+	at java.text.DateFormat.parse(DateFormat.java:366) ~[na:1.8.0_192]
+	at com.tibco.bw.thor.management.persistence.rdbms.BWRDBMSDataManager.getCommandHistoryRecords(BWRDBMSDataManager.java:7416) ~[com.tibco.bw.thor.management.persistence_1.4.1000.008.jar:na]
+	... 30 common frames omitted
+08:39:13.509 ERROR [Scheduler-1703837357] com.tibco.tea.agent - Timeout on Read
+java.net.SocketTimeoutException: Timeout on Read
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onReadTimeout(AbstractWebSocketConnection.java:473) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection.onFillInterestedFailed(AbstractConnection.java:170) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillInterestedFailed(AbstractWebSocketConnection.java:419) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.failed(AbstractConnection.java:285) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.FillInterest.onFail(FillInterest.java:134) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractEndPoint.onIdleExpired(AbstractEndPoint.java:398) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout.checkIdleTimeout(IdleTimeout.java:166) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout$1.run(IdleTimeout.java:50) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_192]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+20:13:01.739 ERROR [Scheduler-1703837357] com.tibco.tea.agent - Timeout on Read
+java.net.SocketTimeoutException: Timeout on Read
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onReadTimeout(AbstractWebSocketConnection.java:473) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection.onFillInterestedFailed(AbstractConnection.java:170) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillInterestedFailed(AbstractWebSocketConnection.java:419) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.failed(AbstractConnection.java:285) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.FillInterest.onFail(FillInterest.java:134) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractEndPoint.onIdleExpired(AbstractEndPoint.java:398) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout.checkIdleTimeout(IdleTimeout.java:166) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout$1.run(IdleTimeout.java:50) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_192]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+22:13:37.267 ERROR [Scheduler-1703837357] com.tibco.tea.agent - Timeout on Read
+java.net.SocketTimeoutException: Timeout on Read
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onReadTimeout(AbstractWebSocketConnection.java:473) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection.onFillInterestedFailed(AbstractConnection.java:170) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillInterestedFailed(AbstractWebSocketConnection.java:419) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.failed(AbstractConnection.java:285) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.FillInterest.onFail(FillInterest.java:134) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractEndPoint.onIdleExpired(AbstractEndPoint.java:398) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout.checkIdleTimeout(IdleTimeout.java:166) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout$1.run(IdleTimeout.java:50) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_192]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+19:11:44.473 ERROR [Scheduler-1703837357] com.tibco.tea.agent - Timeout on Read
+java.net.SocketTimeoutException: Timeout on Read
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onReadTimeout(AbstractWebSocketConnection.java:473) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection.onFillInterestedFailed(AbstractConnection.java:170) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillInterestedFailed(AbstractWebSocketConnection.java:419) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.failed(AbstractConnection.java:285) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.FillInterest.onFail(FillInterest.java:134) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractEndPoint.onIdleExpired(AbstractEndPoint.java:398) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout.checkIdleTimeout(IdleTimeout.java:166) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout$1.run(IdleTimeout.java:50) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_192]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+07:01:11.311 ERROR [Scheduler-1703837357] com.tibco.tea.agent - Timeout on Read
+java.net.SocketTimeoutException: Timeout on Read
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onReadTimeout(AbstractWebSocketConnection.java:473) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection.onFillInterestedFailed(AbstractConnection.java:170) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillInterestedFailed(AbstractWebSocketConnection.java:419) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.failed(AbstractConnection.java:285) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.FillInterest.onFail(FillInterest.java:134) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractEndPoint.onIdleExpired(AbstractEndPoint.java:398) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout.checkIdleTimeout(IdleTimeout.java:166) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout$1.run(IdleTimeout.java:50) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_192]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+20:50:17.089 ERROR [Scheduler-1703837357] com.tibco.tea.agent - Timeout on Read
+java.net.SocketTimeoutException: Timeout on Read
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onReadTimeout(AbstractWebSocketConnection.java:473) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection.onFillInterestedFailed(AbstractConnection.java:170) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillInterestedFailed(AbstractWebSocketConnection.java:419) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.failed(AbstractConnection.java:285) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.FillInterest.onFail(FillInterest.java:134) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractEndPoint.onIdleExpired(AbstractEndPoint.java:398) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout.checkIdleTimeout(IdleTimeout.java:166) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout$1.run(IdleTimeout.java:50) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_192]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+00:50:24.007 ERROR [Scheduler-1703837357] com.tibco.tea.agent - Timeout on Read
+java.net.SocketTimeoutException: Timeout on Read
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onReadTimeout(AbstractWebSocketConnection.java:473) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection.onFillInterestedFailed(AbstractConnection.java:170) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillInterestedFailed(AbstractWebSocketConnection.java:419) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.failed(AbstractConnection.java:285) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.FillInterest.onFail(FillInterest.java:134) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractEndPoint.onIdleExpired(AbstractEndPoint.java:398) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout.checkIdleTimeout(IdleTimeout.java:166) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout$1.run(IdleTimeout.java:50) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_192]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+14:05:49.594 ERROR [Scheduler-1703837357] com.tibco.tea.agent - Timeout on Read
+java.net.SocketTimeoutException: Timeout on Read
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onReadTimeout(AbstractWebSocketConnection.java:473) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection.onFillInterestedFailed(AbstractConnection.java:170) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillInterestedFailed(AbstractWebSocketConnection.java:419) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.failed(AbstractConnection.java:285) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.FillInterest.onFail(FillInterest.java:134) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractEndPoint.onIdleExpired(AbstractEndPoint.java:398) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout.checkIdleTimeout(IdleTimeout.java:166) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout$1.run(IdleTimeout.java:50) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_192]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+09:30:52.319 ERROR [Scheduler-1703837357] com.tibco.tea.agent - Timeout on Read
+java.net.SocketTimeoutException: Timeout on Read
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onReadTimeout(AbstractWebSocketConnection.java:473) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection.onFillInterestedFailed(AbstractConnection.java:170) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillInterestedFailed(AbstractWebSocketConnection.java:419) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.failed(AbstractConnection.java:285) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.FillInterest.onFail(FillInterest.java:134) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractEndPoint.onIdleExpired(AbstractEndPoint.java:398) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout.checkIdleTimeout(IdleTimeout.java:166) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout$1.run(IdleTimeout.java:50) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_192]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+03:35:26.630 ERROR [Scheduler-1703837357] com.tibco.tea.agent - Timeout on Read
+java.net.SocketTimeoutException: Timeout on Read
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onReadTimeout(AbstractWebSocketConnection.java:473) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection.onFillInterestedFailed(AbstractConnection.java:170) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillInterestedFailed(AbstractWebSocketConnection.java:419) [websocket-common-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.failed(AbstractConnection.java:285) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.FillInterest.onFail(FillInterest.java:134) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.AbstractEndPoint.onIdleExpired(AbstractEndPoint.java:398) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout.checkIdleTimeout(IdleTimeout.java:166) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at org.eclipse.jetty.io.IdleTimeout$1.run(IdleTimeout.java:50) [jetty-io-9.4.8.v20171121.jar:9.4.8.v20171121]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_192]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_192]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
