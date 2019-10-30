@@ -35,7 +35,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Authors
 
-* **Hicham EL GHAZALI** - *Initial work* 
+* **[Hicham EL GHAZALI](https://www.linkedin.com/in/hichamelghazali/)** 
 
 ## License
 
