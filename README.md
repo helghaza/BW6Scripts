@@ -24,14 +24,13 @@ export TIBCO_HOME=/opt/tibco/home/BW651
 
 ## Built With
 
-* [TIBCO](http://www.tibco.com/) - The web framework used
-* [TIBCO Community](https://community.tibco.com/) - Dependency Management
-* [TIBCO Docs](https://docs.tibco.com/) - Used to generate RSS Feeds
+* [TIBCO](http://www.tibco.com/) - 
+* [TIBCO Community](https://community.tibco.com/) - 
+* [TIBCO Docs](https://docs.tibco.com/) - 
 
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 
 
 ## Authors
