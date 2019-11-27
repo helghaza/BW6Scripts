@@ -11,45 +11,24 @@ case "$1" in
 		then
 			/Applications/Postgres.app/Contents/Versions/9.6/bin/postgres -D "/Users/elghazali/Library/Application Support/Postgres/var-9.6" -p 5432 > $DIR/logs/postgres.log 2>&1 &
 		else
-			success "\t ✅ PostgreSQL database is started (PID: $postgres_pid)."
+			success "\t* PostgreSQL database is started (PID: $postgres_pid)."
 		fi
-
-		inf "Starting TIBCO BusinessWorks Agent"
-        bw_pid=`pidof bwagent`
-		if [ -z $bw_pid ]
-		then
-			cd $BW_HOME/bin/
-			$BW_HOME/bin/bwagent > $LOGFILE_BW 2>&1 &
-			cd -
-			warn '#####                     (33%)\r'
-			sleep 2
-			warn '#############             (66%)\r'
-			sleep 2
-			warn '#######################   (100%)\r'
-			echo -ne '\n'
-			tail -10 $LOGFILE_BW
-			$0 status
-		else 
-			$0 status
-		fi
-
-
 	;;
 	stop)
-		inf "Stopping TIBCO BusinessWorks AppNode"
-		for var in `find $BW_HOME -name "stopBWAppNode.sh"` 
+		inf "Stopping TIBCO BusinessWorks Agent"
+		for var in `find $TIBCO_HOME -name "stopBWAppNode.sh"` 
 		do 
 			echo $var
 			. $var 
 		done 
-		bw_pid=`pidof bwagent`
+			bw_pid=`pidof bwagent`
 		if [ -z $bw_pid ]
 		then
 			error "No bwagent pid found. Nothing to stop... "
 			exit 1
 		fi
-		kill $bw_pid >> $LOGFILE_BW 2>&1
-		$0 status
+		kill $bw_pid >> $LOGFILE 2>&1
+		error "TIBCO BWAgent - stopped ! (PID: $bw_pid)."
 	;;
 	status)
 		inf "Status of TIBCO BusinessWorks Agent"
