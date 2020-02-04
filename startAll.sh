@@ -1,4 +1,7 @@
 #!/bin/sh
+cd /opt/tibco/script
+source ./config.sh
+
 /opt/tibco/script/ems start
 /opt/tibco/script/tea start
 /opt/tibco/script/bwagent start

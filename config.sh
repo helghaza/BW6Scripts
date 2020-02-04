@@ -42,7 +42,7 @@ inf() { log INFO "$1"; } # "info" is already a command
 export DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 # Set environment variables for BW
-export BW_HOME=/opt/tibco/home/BW651/bw/6.5
+export BW_HOME=/opt/tibco/home/BW660/bw/6.6
 export LOGFILE_BW=$DIR/logs/tibco-bwagent_out.log
 
 # Set environment variables for EMS

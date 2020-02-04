@@ -2,7 +2,7 @@
 
 # chkconfig: 3 90 20
 # description: Startup/Shutdown TIBCO EMS
-source config.sh
+source ./config.sh
 
 case "$1" in
  	start)
