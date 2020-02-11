@@ -1,9 +1,13 @@
-#!/bin/sh
+#!/bin/bash
+source $( dirname "$0" )/config.sh
 
-/opt/tibco/akd/core/2.4/bin/zookeeper-server-start.sh /opt/tibco/akd/core/2.4/config/zookeeper.properties 
-/opt/tibco/akd/core/2.4/bin/kafka-server-start.sh /opt/tibco/akd/core/2.4/config/server.properties 
+cd $KAFKA_HOME
+$KAFKA_HOME/bin/zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties > $LOGFILE_ZOO 2>&1 &
 
-/opt/tibco/akd/core/2.4/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic helloTopic
-/opt/tibco/akd/core/2.4/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic helloTopic --from-beginning
+$KAFKA_HOME/bin/kafka-server-start.sh $KAFKA_HOME/config/server.properties > $LOGFILE_KAFKA 2>&1 &
+
+
+#$KAFKA_HOME/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic helloTopic
+#$KAFKA_HOME/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic helloTopic --from-beginning
 
 sleep 30

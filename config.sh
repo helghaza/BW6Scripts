@@ -46,13 +46,16 @@ export BW_HOME=/opt/tibco/home/BW660/bw/6.6
 export LOGFILE_BW=$DIR/logs/tibco-bwagent_out.log
 
 # Set environment variables for EMS
-export DIR="$( cd "$( dirname "$0" )" && pwd )"
 export EMS_HOME=/opt/tibco/EMS840/ems/8.4
 export LOGFILE_EMS=$DIR/logs/tibco-ems_out.log
 
 
 
 # Set environment variables for TEA
-export DIR="$( cd "$( dirname "$0" )" && pwd )"
 export TEA_HOME=/opt/tibco/home/BW642/tea/2.3
 export LOGFILE_TEA=$DIR/logs/tibco-tea_out.log
+
+# Set environment variables for KAFKA
+export KAFKA_HOME=/opt/tibco/akd/core/2.4/
+export LOGFILE_KAFKA=$DIR/logs/tibco-kafka_out.log
+export LOGFILE_ZOO=$DIR/logs/tibco-zookeeper_out.log
