@@ -9,7 +9,7 @@ case "$1" in
 		postgres_pid=`ps -ef | grep "bin/postgres" | grep -v "grep"  | awk '{print $2}'`
 		if [ -z $postgres_pid ]
 		then
-			/Applications/Postgres.app/Contents/Versions/9.6/bin/postgres -D "/Users/elghazali/Library/Application Support/Postgres/var-9.6" -p 5432 > $DIR/logs/postgres.log 2>&1 &
+			postgres_pid=`brew services run postgresql`
 		else
 			success "\t ✅ PostgreSQL database is started (PID: $postgres_pid)."
 		fi

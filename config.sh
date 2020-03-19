@@ -42,17 +42,15 @@ inf() { log INFO "$1"; } # "info" is already a command
 export DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 # Set environment variables for BW
-export BW_HOME=/opt/tibco/home/BW660/bw/6.6
+export BW_HOME=/opt/tibco/bw660/bw/6.6/
 export LOGFILE_BW=$DIR/logs/tibco-bwagent_out.log
 
 # Set environment variables for EMS
-export EMS_HOME=/opt/tibco/EMS840/ems/8.4
+export EMS_HOME=/opt/tibco/ems/8.5
 export LOGFILE_EMS=$DIR/logs/tibco-ems_out.log
 
-
-
 # Set environment variables for TEA
-export TEA_HOME=/opt/tibco/home/BW642/tea/2.3
+export TEA_HOME=/opt/tibco/tea/tea/2.3/
 export LOGFILE_TEA=$DIR/logs/tibco-tea_out.log
 
 # Set environment variables for KAFKA

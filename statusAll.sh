@@ -1,11 +1,14 @@
 #!/bin/bash
-cd /opt/tibco/script
 
-source /opt/tibco/script/config.sh
+# chkconfig: 3 90 20
+# description: Startup/Shutdown TIBCO TEA
+source ./config.sh
 
-/opt/tibco/script/ems status
-/opt/tibco/script/tea status
-/opt/tibco/script/bwagent status
+cd $DIR
+
+$DIR/ems status
+$DIR/tea status
+$DIR/bwagent status
 
 sleep 10
 
