@@ -86,8 +86,13 @@ governancejmsuserpassword: "",
 TIBCO ActiveMatrix BusinessWorks version 6.6.0, hotfix 2, build V67, 2020-03-05
 15:33:10.214 WARN  [main] org.eclipse.jetty.server.Server - ErrorPageMapper not supported for Server level Error Handling
 TIBCO-BW-AGENT-300002: BusinessWorks Agent started successfully.
-````
+```
 If everything fine, you can use the scripts above.
+
+## additional documentation
+https://stackoverflow.com/questions/19563766/eclipse-kepler-for-os-x-mavericks-request-java-se-6
+
+
 
 ## Built With
 
