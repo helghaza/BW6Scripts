@@ -57,3 +57,6 @@ export LOGFILE_TEA=$DIR/logs/tibco-tea_out.log
 export KAFKA_HOME=/opt/tibco/akd/core/2.4/
 export LOGFILE_KAFKA=$DIR/logs/tibco-kafka_out.log
 export LOGFILE_ZOO=$DIR/logs/tibco-zookeeper_out.log
+
+# Set environment variables for GEMS
+export GEMS_HOME=/opt/tibco/gems/

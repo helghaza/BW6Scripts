@@ -1,4 +1,6 @@
 #!/bin/sh
+source $( dirname "$0" )/config.sh
+cd $GEMS_HOME
 
 gems()
 {
@@ -21,5 +23,5 @@ CLASSPATH=${CLASSPATH}:lib/jcommon-1.0.23.jar:lib/jfreechart-1.0.19.jar
 java -classpath ${CLASSPATH} -Xmx512m -DPlastic.defaultTheme=DesertBluer com.tibco.gems.Gems gems.props
 
 }
-cd /opt/tibco/tools/Gems
+cd $GEMS_HOME
 gems

@@ -10,11 +10,11 @@ case "$1" in
 			cd $TEA_HOME/bin/
 		    $TEA_HOME/bin/tea > $LOGFILE_TEA 2>&1 &
             cd $DIR
-		    echo -ne '#####                     (33%)\r'
+		    echo -ne '████			(33%)\r'
 		    sleep 2
-		    echo -ne '#############             (66%)\r'
+		    echo -ne '████████      (66%)\r'
 		    sleep 2
-		    echo -ne '#######################   (100%)\r'
+		    echo -ne '████████████	(100%)\r'
 		    echo -ne '\n'
 
 			sleep 5
@@ -22,11 +22,11 @@ case "$1" in
 			cd /opt/tibco/tea/tea/agents/ems/1.2/bin
 			/opt/tibco/tea/tea/agents/ems/1.2/bin/ems-agent > $LOGFILE_TEA 2>&1 &
 			cd $DIR
-		    echo -ne '#####                     (33%)\r'
+		    echo -ne '████			(33%)\r'
 		    sleep 2
-		    echo -ne '#############             (66%)\r'
+		    echo -ne '████████      (66%)\r'
 		    sleep 2
-		    echo -ne '#######################   (100%)\r'
+		    echo -ne '████████████	(100%)\r'
 		    echo -ne '\n'
 
 		    $0 status	

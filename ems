@@ -10,11 +10,11 @@ case "$1" in
 			cd $EMS_HOME/bin/
 		    $EMS_HOME/bin/tibemsd64 > $LOGFILE_EMS 2>&1 &
             cd -
-		    echo -ne '#####                     (33%)\r'
+		    echo -ne '████			(33%)\r'
 		    sleep 2
-		    echo -ne '#############             (66%)\r'
+		    echo -ne '████████      (66%)\r'
 		    sleep 2
-		    echo -ne '#######################   (100%)\r'
+		    echo -ne '████████████	(100%)\r'
 		    echo -ne '\n'
 		    $0 status	
 		;;

@@ -2,7 +2,7 @@
 # chkconfig: 3 90 20
 # description: Startup/Shutdown TIBCO BusinessWorks Agent
 source $( dirname "$0" )/config.sh
-
+inf "➡️  Working in $BW_HOME"
 case "$1" in
  	start)
 	 	inf "Starting Postgres Database"
@@ -19,7 +19,7 @@ case "$1" in
 		if [ -z $bw_pid ]
 		then
 			cd $BW_HOME/bin/
-			$BW_HOME/bin/bwagent > $LOGFILE_BW 2>&1 &
+			$BW_HOME/bin/bwagent apiserver> $LOGFILE_BW 2>&1 &
 			cd -
 			warn '████			(33%)\r'
 			sleep 2
@@ -36,7 +36,7 @@ case "$1" in
 
 	;;
 	stop)
-		inf "Stopping TIBCO BusinessWorks AppNode"
+		inf "Stopping TIBCO BusinessWorks AppNodes"
 		for var in `find $BW_HOME -name "stopBWAppNode.sh"` 
 		do 
 			echo $var
@@ -48,7 +48,8 @@ case "$1" in
 			error "No bwagent pid found. Nothing to stop... "
 			exit 1
 		fi
-		kill $bw_pid >> $LOGFILE_BW 2>&1
+		cd $BW_HOME/bin/
+		$BW_HOME/bin/bwagent stop> $LOGFILE_BW 2>&1 &
 		$0 status
 	;;
 	status)
