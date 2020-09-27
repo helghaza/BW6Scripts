@@ -6,9 +6,9 @@ Scripts to manage the TIBCO Software in MacOS environment
 * ems : manage TIBCO EMS agent
 * tea : manage TIBCO TEA agent
 * gems.command : start GEMS
-* startAll.sh : start EMS, BWAgent and TEA
-* statusAll.sh: get the status of EMS, BWAgent and TEA
-* stopAll.sh: stop EMS, BWAgent and TEA
+* startAll.command : start EMS, BWAgent and TEA
+* statusAll.command: get the status of EMS, BWAgent and TEA
+* stopAll.command: stop EMS, BWAgent and TEA
 
 ## How to launch :
 
@@ -24,9 +24,9 @@ export TIBCO_HOME=/opt/tibco/home/BW651
 
 ## Built With
 
-* [TIBCO](http://www.tibco.com/) - 
-* [TIBCO Community](https://community.tibco.com/) - 
-* [TIBCO Docs](https://docs.tibco.com/) - 
+* [TIBCO](http://www.tibco.com/)
+* [TIBCO Community](https://community.tibco.com/)
+* [TIBCO Docs](https://docs.tibco.com/)
 
 ## Contributing
 
