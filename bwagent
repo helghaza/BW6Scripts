@@ -11,7 +11,7 @@ case "$1" in
 		then
 			postgres_pid=`brew services run postgresql`
 		else
-			success "\t ✅ PostgreSQL database is started (PID: $postgres_pid)."
+			success "PostgreSQL database is started (PID: $postgres_pid)."
 		fi
 
 		inf "Starting TIBCO BusinessWorks Agent"
@@ -21,12 +21,7 @@ case "$1" in
 			cd $BW_HOME/bin/
 			$BW_HOME/bin/bwagent apiserver> $LOGFILE_BW 2>&1 &
 			cd -
-			warn '████			(33%)\r'
-			sleep 2
-			warn '████████      (66%)\r'
-			sleep 2
-			warn '████████████	(100%)\r'
-			echo -ne '\n'
+			timer
 			tail -10 $LOGFILE_BW
 			$0 status
 		else 
@@ -57,18 +52,18 @@ case "$1" in
 		bw_pid=`pidof bwagent`
 		if [ -z $bw_pid ]
 		then
-			error "\t ❌ TIBCO BW Agent is stopped."
+			error "TIBCO BW Agent is stopped."
 		else
-			success "\t ✅ TIBCO BW Agent is started (PID: $bw_pid)."
+			success "TIBCO BW Agent is started (PID: $bw_pid)."
 		fi
 
 		inf "Status of TIBCO BusinessWorks Appnodes"
 		bwappnode_pid=`pidof bwappnode`
 		if [ -z $bwappnode_pid ]
 		then
-			error "\t ❌ TIBCO BW Appnode is stopped."
+			error "TIBCO BW Appnode is stopped."
 		else
-			success "\t ✅ TIBCO BW Appnode is started (PID: $bwappnode_pid)."
+			success "TIBCO BW Appnode is started (PID: $bwappnode_pid)."
 		fi
 	;;
 	restart)

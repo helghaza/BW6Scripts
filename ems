@@ -10,20 +10,16 @@ case "$1" in
 			cd $EMS_HOME/bin/
 		    $EMS_HOME/bin/tibemsd64 > $LOGFILE_EMS 2>&1 &
             cd -
-		    echo -ne '████			(33%)\r'
-		    sleep 2
-		    echo -ne '████████      (66%)\r'
-		    sleep 2
-		    echo -ne '████████████	(100%)\r'
-		    echo -ne '\n'
+			timer
 		    $0 status	
 		;;
  	stop)
+	 	timer
         inf "Stopping TIBCO EMS Instance"
 	    ems_pid=`pidof tibemsd`
 		if [ -z $ems_pid ]
 		then
-			error "No EMS pid found. Nothing to stop... "
+			warn "No EMS pid found. Nothing to stop... "
 			exit 1
 		fi
 		kill $ems_pid >> $LOGFILE_EMS 2>&1
@@ -34,9 +30,9 @@ case "$1" in
         ems_pid=`pidof tibemsd`
 		if [ -z $ems_pid ]
 	    	then
-			error "\t ❌ TIBCO EMS Instance is stopped"
+			error "TIBCO EMS Instance is stopped"
 		else
-			success "\t ✅ TIBCO EMS Instance is started (PID: $ems_pid)"
+			success "TIBCO EMS Instance is started (PID: $ems_pid)"
 	    	fi
 		;;
 	restart)

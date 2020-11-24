@@ -9,7 +9,7 @@ function log() {
 	bldblu=${txtbld}$(tput setaf 2) #  blue
 	bldwht=${txtbld}$(tput setaf 7) #  white
 	txtrst=$(tput sgr0)             # Reset
-	info=${bldwht}*${txtrst}        # Feedback
+	info=${bldblu}*${txtrst}        # Feedback
 	pass=${bldblu}*${txtrst}
 	warn=${bldred}*${txtrst}
 	ques=${bldblu}?${txtrst}
@@ -17,13 +17,13 @@ function log() {
 
 case "$1" in
  	INFO)
-		echo -e "$bldwht$2$txtrst"
+		echo -e "$(tput setaf 2)$2$txtrst"
 	;;
 	ERROR)
 		echo -e "$bldred$2$txtrst"
 	;;
 	WARN)
-		echo -ne "$bldylw$2$txtrst"
+		echo -e "$bldylw$2$txtrst"
 	;;
 	SUCCESS)
 		echo -e "$bldblu$2$txtrst"
@@ -34,15 +34,29 @@ case "$1" in
 esac
 }
 
-error() { log ERROR "$1"; }
-warn() { log WARN "$1"; }
-success() { log SUCCESS "$1"; }
-inf() { log INFO "$1"; } # "info" is already a command
+error() { log ERROR " [x] $1"; }
+warn() { log WARN " [!] $1"; }
+success() { log SUCCESS " [i] $1"; }
+inf() { log INFO " [i] $1"; } # "info" is already a command
 
+timer() {
+			echo -ne '████					(15%)\r'
+		    sleep 1
+		    echo -ne '████████				(30%)\r'
+		    sleep 1
+		    echo -ne '████████████				(45%)\r'
+		    sleep 1
+		    echo -ne '████████████████			(60%)\r'
+		    sleep 1
+		    echo -ne '████████████████████			(75%)\r'
+			sleep 1
+		    echo -ne '████████████████████████		(100%)\r'
+		    echo -ne '\n'
+}
 export DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 # Set environment variables for BW
-export BW_HOME=/opt/tibco/bw660/bw/6.6/
+export BW_HOME=/opt/tibco/bw661/bw/6.6/
 export LOGFILE_BW=$DIR/logs/tibco-bwagent_out.log
 
 # Set environment variables for EMS

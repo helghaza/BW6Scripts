@@ -10,24 +10,14 @@ case "$1" in
 			cd $TEA_HOME/bin/
 		    $TEA_HOME/bin/tea > $LOGFILE_TEA 2>&1 &
             cd $DIR
-		    echo -ne '████			(33%)\r'
-		    sleep 2
-		    echo -ne '████████      (66%)\r'
-		    sleep 2
-		    echo -ne '████████████	(100%)\r'
-		    echo -ne '\n'
+		    timer
 
 			sleep 5
 		inf "Starting TIBCO TEA EMS Agent"
 			cd /opt/tibco/tea/tea/agents/ems/1.2/bin
 			/opt/tibco/tea/tea/agents/ems/1.2/bin/ems-agent > $LOGFILE_TEA 2>&1 &
 			cd $DIR
-		    echo -ne '████			(33%)\r'
-		    sleep 2
-		    echo -ne '████████      (66%)\r'
-		    sleep 2
-		    echo -ne '████████████	(100%)\r'
-		    echo -ne '\n'
+		    timer
 
 		    $0 status	
 		;;
@@ -57,18 +47,18 @@ case "$1" in
         tea_pid=`ps -ef | grep "tea --innerProcess" | grep -v "grep"  | awk '{print $2}'`
 		if [ -z $tea_pid ]
 	    	then
-			error "\t ❌ TIBCO TEA Agent is stopped."
+			error "TIBCO TEA Agent is stopped."
 		else
-			success "\t ✅ TIBCO TEA Agent is started (PID: $tea_pid)."
+			success "TIBCO TEA Agent is started (PID: $tea_pid)."
 	    	fi
 		
 		inf "Status of TIBCO TEA Agent for EMS"
         emsagent_pid=`ps -ef | grep "ems-agent --innerProcess" | grep -v "grep"  | awk '{print $2}'`
 		if [ -z $emsagent_pid ]
 	    	then
-			error "\t ❌ TIBCO TEA Agent for EMS is stopped."
+			error "TIBCO TEA Agent for EMS is stopped."
 		else
-			success "\t ✅ TIBCO TEA Agent for EMS is started (PID: $emsagent_pid)."
+			success "TIBCO TEA Agent for EMS is started (PID: $emsagent_pid)."
 	    	fi
 		;;
 	restart)
